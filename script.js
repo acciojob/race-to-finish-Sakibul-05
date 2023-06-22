@@ -2,31 +2,40 @@ window.promises = [];
 
 // Do not change the code above this
 // add your promises to the array `promises`
-let randomBw1000to5000 = Math.floor(Math.random() * ((5000-1000)+1) + 1000);
+let randomOne = Math.floor(Math.random() * ((5-1)+1) + 1);
+let randomTwo = Math.floor(Math.random() * ((5-1)+1) + 1);
+let randomThree = Math.floor(Math.random() * ((5-1)+1) + 1);
+let randomFour = Math.floor(Math.random() * ((5-1)+1) + 1);
+let randomFive = Math.floor(Math.random() * ((5-1)+1) + 1);
+console.log(randomOne*1000)
+console.log(randomTwo*1000)
+console.log(randomThree*1000)
+console.log(randomFour*1000)
+console.log(randomFive*1000)
 let prom1 = new Promise((resolve, reject)=>{
 	setTimeout(()=>{
 		resolve("first promise resolved");
-	},randomBw1000to5000)
+	},randomOne*1000)
 })
 let prom2 = new Promise((resolve, reject)=>{
 	setTimeout(()=>{
 		resolve("second promise resolved");
-	},randomBw1000to5000)
+	},randomTwo*1000)
 })
 let prom3 = new Promise((resolve, reject)=>{
 	setTimeout(()=>{
 		resolve("third promise resolved");
-	},randomBw1000to5000)
+	},randomThree*1000)
 })
 let prom4 = new Promise((resolve, reject)=>{
 	setTimeout(()=>{
 		resolve("fourth promise resolved");
-	},randomBw1000to5000)
+	},randomFour*1000)
 })
 let prom5 = new Promise((resolve, reject)=>{
 	setTimeout(()=>{
 		resolve("fifth promise resolved");
-	},randomBw1000to5000)
+	},randomFive*1000)
 })
 
 promises.push(prom1);
@@ -35,17 +44,12 @@ promises.push(prom3);
 promises.push(prom4);
 promises.push(prom5);
 
+ 
 Promise.any(promises).then((data)=>{
 	let output = document.getElementById("output");
 	output.innerText = data;
+	 
 });
- 
-
-
-
-
-
-
 
 
 
