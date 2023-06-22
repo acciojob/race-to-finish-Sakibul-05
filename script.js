@@ -12,6 +12,8 @@ console.log(randomTwo*1000)
 console.log(randomThree*1000)
 console.log(randomFour*1000)
 console.log(randomFive*1000)
+
+//create five promise objects
 let prom1 = new Promise((resolve, reject)=>{
 	setTimeout(()=>{
 		resolve("first promise resolved");
@@ -38,13 +40,16 @@ let prom5 = new Promise((resolve, reject)=>{
 	},randomFive*1000)
 })
 
+//push each promise object to promises array
 promises.push(prom1);
 promises.push(prom2);
 promises.push(prom3);
 promises.push(prom4);
 promises.push(prom5);
 
- 
+//Promise.any([prom1,prom2,...])--> return a new Promise. 
+//This returned Promise get fulfilled if any of array of 
+//promises get fulfilled, with the first fulfilment value
 Promise.any(promises).then((data)=>{
 	let output = document.getElementById("output");
 	output.innerText = data;
